@@ -10,6 +10,32 @@
 - 任务可以拆给 parallel agent 或 sub-agent 并行推进。
 - 需要为每个非 trivial phase 沉淀阶段 PRD 文档，方便后续恢复上下文。
 
+## 安装方法
+
+首次安装：
+
+```bash
+mkdir -p ~/.codex/skills
+git clone https://github.com/pepsile/codex-go-mode-skill.git ~/.codex/skills/go-mode
+```
+
+如果本地已经有旧版本：
+
+```bash
+cd ~/.codex/skills/go-mode
+git pull
+```
+
+安装后检查：
+
+```bash
+test -f ~/.codex/skills/go-mode/SKILL.md
+test -f ~/.codex/skills/go-mode/agents/openai.yaml
+test -f ~/.codex/skills/go-mode/templates/phase-prd-template.md
+```
+
+如果三个命令都没有输出错误，就说明文件在位。重开一个 Codex 会话后，就可以通过 `go-mode` 触发这个 skill。
+
 ## 安装位置
 
 把本仓库放到 Codex skills 目录下：
